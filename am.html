@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+            margin: 0;
+        }
+        .amazon-logo {
+            width: 200px;
+            height: auto;
+        }
+        .amazon-wordmark {
+            font-family: 'Arial', sans-serif;
+            font-size: 100px;
+            fill: #FF9900;
+            text-anchor: middle;
+        }
+        .amazon-smile {
+            fill: none;
+            stroke: #FF9900;
+            stroke-width: 20;
+            stroke-linecap: round;
+        }
+        .amazon-arrow {
+            fill: #FF9900;
+        }
+        @keyframes smile {
+            0% {
+                stroke-dasharray: 0, 1000;
+            }
+            100% {
+                stroke-dasharray: 1000, 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg class="amazon-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+        <!-- Amazon wordmark -->
+        <text x="200" y="100" class="amazon-wordmark">amazon</text>
+        
+        <!-- Amazon smile -->
+        <path class="amazon-smile" d="M50,250 C150,350 250,350 350,250"/>
+        
+        <!-- Amazon arrow -->
+        <polygon class="amazon-arrow" points="350,250 340,270 360,270"/>
+    </svg>
+
+    <script>
+        document.querySelector('.amazon-smile').style.animation = 'smile 2s ease-in-out forwards';
+    </script>
+</body>
+</html>
